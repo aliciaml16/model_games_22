@@ -12,7 +12,10 @@ public class mouseInteraction : MonoBehaviour
     public Material material05;
 
     private float randomMass;
-    //var gabeObject cube00;
+
+    public GameObject[] objects;
+    private int index;
+
     void Start()
     {
 
@@ -27,37 +30,44 @@ public class mouseInteraction : MonoBehaviour
         // If it hits but the object also has a rigidbody
         if (Physics.Raycast(ray, out hit) &&  hit.rigidbody != null) {
              if (Input.GetMouseButtonDown(0)){
-                 hit.rigidbody.AddForce(new Vector3(20, 0, 0), ForceMode.Impulse);
+                 hit.rigidbody.AddForce(new Vector3(30, 0, 0), ForceMode.Impulse);
              }
              if (Input.GetMouseButtonDown(2)){
-                 hit.rigidbody.AddForce(new Vector3(0, 20, 0), ForceMode.Impulse);
+                 hit.rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
              }
              if (Input.GetMouseButtonDown(1)){
-                 hit.rigidbody.AddForce(new Vector3(-20, 0, 0), ForceMode.Impulse);
+                 hit.rigidbody.AddForce(new Vector3(-30, 0, 0), ForceMode.Impulse);
              }
         }
 
         if (Input.GetKeyDown("space"))
         {
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            sphere.transform.position = new Vector3(Random.Range(0.0f, 10.0f), 2.5f, 0);
+            //randomObjectF = Random.Range(0, objects.Length);
+            //randomObjectI = (int) randomObjectF;
 
-            Rigidbody gameObjectsRigidBody = sphere.AddComponent<Rigidbody>(); // Add the rigidbody.
+            index = Random.Range(0, objects.Length);
+
+            //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //sphere.transform.position = new Vector3(Random.Range(-17.0f, 22.0f), 20.0f, 0);
+
+            GameObject clone;
+            clone = Instantiate(objects[index], new Vector3(Random.Range(-17.0f, 22.0f), 20.0f, 0), Quaternion.identity);
+
             randomMass = Random.Range(2.0f, 3.5f);
-            gameObjectsRigidBody.mass = randomMass; // Set the GO's mass to 5 via the Rigidbody.
+            //gameObjectsRigidBody.mass = randomMass; // Set the GO's mass to 5 via the Rigidbody.
 
             if(randomMass >= 2f && randomMass < 2.25f) {
-                sphere.GetComponent<Renderer>().material = material00;
+                clone.GetComponent<Renderer>().material = material00;
             } else if(randomMass >= 2.25f && randomMass < 2.5f) {
-                sphere.GetComponent<Renderer>().material = material01;
+                clone.GetComponent<Renderer>().material = material01;
             } else if(randomMass >= 2.5f && randomMass < 2.75f) {
-                sphere.GetComponent<Renderer>().material = material02;
+                clone.GetComponent<Renderer>().material = material02;
             } else if(randomMass >= 2.75f && randomMass < 3f) {
-                sphere.GetComponent<Renderer>().material = material03;
+                clone.GetComponent<Renderer>().material = material03;
             } else if(randomMass >= 3f && randomMass < 3.25f) {
-                sphere.GetComponent<Renderer>().material = material04;
+                clone.GetComponent<Renderer>().material = material04;
             } else if(randomMass >= 3.25f && randomMass < 3.5f) {
-                sphere.GetComponent<Renderer>().material = material05;
+                clone.GetComponent<Renderer>().material = material05;
             }
         }
     }
