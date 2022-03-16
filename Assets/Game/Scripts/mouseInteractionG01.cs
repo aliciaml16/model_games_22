@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mouseInteraction : MonoBehaviour
+public class mouseInteractionG01 : MonoBehaviour
 {
     public Material material00;
     public Material material01;
@@ -30,13 +30,13 @@ public class mouseInteraction : MonoBehaviour
         // If it hits but the object also has a rigidbody
         if (Physics.Raycast(ray, out hit) &&  hit.rigidbody != null) {
              if (Input.GetMouseButtonDown(0)){
-                 hit.rigidbody.AddForce(new Vector3(30, 0, 0), ForceMode.Impulse);
+                 hit.rigidbody.AddForce(new Vector3(20, 0, 0), ForceMode.Impulse);
              }
              if (Input.GetMouseButtonDown(2)){
-                 hit.rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
+                 hit.rigidbody.AddForce(new Vector3(0, 20, 0), ForceMode.Impulse);
              }
              if (Input.GetMouseButtonDown(1)){
-                 hit.rigidbody.AddForce(new Vector3(-30, 0, 0), ForceMode.Impulse);
+                 hit.rigidbody.AddForce(new Vector3(-20, 0, 0), ForceMode.Impulse);
              }
         }
 
