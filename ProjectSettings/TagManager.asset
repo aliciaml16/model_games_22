@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - collisionable
+  - platform
+  - ball
+  - ball02
   layers:
   - Default
   - TransparentFX
