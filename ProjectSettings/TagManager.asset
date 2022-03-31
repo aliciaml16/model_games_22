@@ -8,6 +8,8 @@ TagManager:
   - platform
   - ball
   - ball02
+  - army
+  - armyCollision
   layers:
   - Default
   - TransparentFX

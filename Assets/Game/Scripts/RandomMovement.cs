@@ -22,26 +22,32 @@ public class RandomMovement : MonoBehaviour {
     private float frameY;
     private float movedX;
     private float movedY;
- 
+    public GameObject jumping;
     // Update is called once per frame
     void Update() {
-        if (selectNewRandomPosition) {
-            StartCoroutine(newRandomPosition());
-        } else if (!waitingForNewPosition) {
-            frameX = (moveX * Time.deltaTime * movementSpeed);
-            frameY = (moveY * Time.deltaTime * movementSpeed);
-            movedX += frameX;
-            movedY += frameY;
-            newX = this.transform.position.x + frameX;
-            newY = this.transform.position.y + frameY;
-            if (Mathf.Abs(movedY) >= Mathf.Abs(moveX) || Mathf.Abs(movedY) >= Mathf.Abs(moveY)) {
-                waitingForNewPosition = true;
-                selectNewRandomPosition = true;
-            } else {
-                this.transform.position = new Vector3(newX, newY, this.transform.position.z);
+        if (jumping.transform.position.z == 1) {
+            if (selectNewRandomPosition) {
+                StartCoroutine(newRandomPosition());
+            } else if (!waitingForNewPosition) {
+                frameX = (moveX * Time.deltaTime * movementSpeed);
+                frameY = (moveY * Time.deltaTime * movementSpeed);
+                movedX += frameX;
+                movedY += frameY;
+                newX = this.transform.position.x + frameX;
+                newY = this.transform.position.y + frameY;
+                if (Mathf.Abs(movedY) >= Mathf.Abs(moveX) || Mathf.Abs(movedY) >= Mathf.Abs(moveY)) {
+                    waitingForNewPosition = true;
+                    selectNewRandomPosition = true;
+                } else {
+                    this.transform.position = new Vector3(newX, newY, this.transform.position.z);
+                }
             }
         }
+        if (Input.GetMouseButtonDown(0)){
+            jumping.transform.position = new Vector3(0, 0, 1);
+        }
     }
+    
  
     IEnumerator newRandomPosition() {
         waitingForNewPosition = true;

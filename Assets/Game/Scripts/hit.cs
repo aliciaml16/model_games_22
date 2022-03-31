@@ -31,7 +31,6 @@ public class hit : MonoBehaviour
             {
                 if (_hit.transform == transform)
                 {
-                    Debug.Log("Click");
                     _renderer.material.color =
                         _renderer.material.color == Color.red ? Color.blue : Color.red;
                 }
