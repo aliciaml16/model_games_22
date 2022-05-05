@@ -10,6 +10,8 @@ TagManager:
   - ball02
   - army
   - armyCollision
+  - limit
+  - head
   layers:
   - Default
   - TransparentFX

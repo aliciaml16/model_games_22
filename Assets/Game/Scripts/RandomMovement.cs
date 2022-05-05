@@ -24,7 +24,11 @@ public class RandomMovement : MonoBehaviour {
     private float movedY;
     public GameObject jumping;
     // Update is called once per frame
+    void Start() {
+        jumping.transform.position = new Vector3(0, 0, 0);
+    }
     void Update() {
+        Debug.Log(jumping.transform.position.z);
         if (jumping.transform.position.z == 1) {
             if (selectNewRandomPosition) {
                 StartCoroutine(newRandomPosition());
