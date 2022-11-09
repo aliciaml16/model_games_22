@@ -13,6 +13,9 @@ TagManager:
   - limit
   - head
   - teletubi
+  - bullet
+  - target
+  - teletubiPart
   layers:
   - Default
   - TransparentFX

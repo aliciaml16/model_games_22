@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 495140483}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,8 +389,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 584275989}
-  - component: {fileID: 584275990}
   - component: {fileID: 584275991}
+  - component: {fileID: 584275990}
   m_Layer: 0
   m_Name: Gun Pivot
   m_TagString: Untagged
@@ -405,14 +405,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584275988}
-  m_LocalRotation: {x: 0.8331095, y: 0, z: 0, w: 0.5531081}
-  m_LocalPosition: {x: 3.5, y: 205.35, z: -324.73}
-  m_LocalScale: {x: 3.4724007, y: 4.239367, z: 3.4724004}
+  m_LocalRotation: {x: 0.83310944, y: 0, z: 0, w: 0.5531082}
+  m_LocalPosition: {x: 3.5, y: 205.84, z: -331.72}
+  m_LocalScale: {x: 3.4724007, y: 5.6553154, z: 3.4724004}
   m_Children:
   - {fileID: 1371767216}
+  - {fileID: 1405203583}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 112.839, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 112.83899, y: 0, z: 0}
 --- !u!114 &584275990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,10 +423,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 584275988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18a1ea378445744c5b09e4fd9cbefbbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 1de3a409573014a199975ba5434dce1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 1397147048131780332, guid: 4ea1efa0573544103ae9a6a6a2104f7b, type: 3}
+  endGun: {fileID: 1405203582}
+  gun: {fileID: 584275988}
   camera: {fileID: 1850505270}
+  force: 1000
 --- !u!54 &584275991
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -778,6 +783,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371767215}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1405203582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1405203583}
+  m_Layer: 0
+  m_Name: End Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1405203583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405203582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 584275989}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1833535419
 GameObject:
   m_ObjectHideFlags: 0
