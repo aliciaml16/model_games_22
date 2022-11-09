@@ -12,6 +12,7 @@ TagManager:
   - armyCollision
   - limit
   - head
+  - teletubi
   layers:
   - Default
   - TransparentFX
