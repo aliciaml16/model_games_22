@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/oa_project/Scenes/Game07.unity
+    guid: 5c3c0870229a34c679eba98d5aaea4ab
+  - enabled: 1
+    path: Assets/Boundaries_Game/boundaries/Scenes/Boundaries_Main.unity
+    guid: 9a126e1411a902f41a077fc0e2af73de
   m_configObjects: {}
