@@ -16,6 +16,7 @@ TagManager:
   - bullet
   - target
   - teletubiPart
+  - object
   layers:
   - Default
   - TransparentFX
